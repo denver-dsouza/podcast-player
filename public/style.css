@@ -152,6 +152,30 @@ button:hover {
     margin-top: 75px;
 }
 
+/* Loader */
+.loader-container {
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 100px;
+}
+
+.loader-container i {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        color: black
+    }
+
+    50% {
+        color: #1DB954;
+    }
+}
 /* Player Container ------------------------ */
 
 /* Player */
