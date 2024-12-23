@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
 html {
     box-sizing: border-box;
 }
@@ -5,4 +7,171 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
+    font-family: 'Spartan', sans-serif;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='24' viewBox='0 0 12 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230094ce' fill-opacity='0.29'%3E%3Cpath d='M2 0h2v12H2V0zm1 20c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM9 8c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-1 4h2v12H8V12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Navigation ------------------------ */
+.nav-wrapper {
+    height: 50px;
+    width: 100%;
+    background: black;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10px;
+}
+
+.nav-title {
+    font-size: 28px;
+    margin: 0;
+    margin-left: 25px;
+    color: white;
+}
+
+.nav-wrapper i {
+    color: #1DB954;
+    font-size: 25px;
+    position: relative;
+    top: -3px;
+    left: 10px;
+}
+
+/* Search Container ------------------------ */
+.search-container {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    display: flex;
+}
+
+select, input, button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+input {
+    width: 300px;
+}
+
+
+.custom-select {
+    width: 300px;
+    height: 40px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.custom-select select {
+    appearance: none;
+    width: 100%;
+    background: white;
+    cursor: pointer;
+    height: 40px;
+}
+
+.custom-select::before,
+.custom-select::after {
+    position: absolute;
+    content: "";
+    right: 10px;
+    pointer-events: none;
+}
+
+.custom-select::before {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+  top: 40%;
+}
+
+.custom-select::after {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  top: 65%;
+}
+
+.search-buttons {
+    display: flex;
+}
+
+button {
+    background: black;
+    color: rgb(220, 220, 220);
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    /* padding: 10px 20px;
+    font-size: 16px; */
+    min-width: 100px;
+}
+
+#resetButton {
+    background: rgb(190, 14, 14);
+    color: white
+}
+
+button:hover {
+    filter: brightness(1.2);
+}
+
+/* Main Container ------------------------ */
+.page-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 500px);
+    height: calc(100% - 100px);
+    margin: 0 auto;
+    margin-top: 75px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #e4eff7;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    margin-top: 75px;
+}
+
+/* Player Container ------------------------ */
+
+/* Player */
+.player {
+    height: 400px;
+    width: 400px;
+    background: #e4eff7;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Queue */
+.queue {
+    background: #e4eff7;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
+    height: calc(100% - 450px);
+    width: 400px;
+    margin-top: 25px;
+    padding: 10px;
+    box-sizing: border-box;
 }

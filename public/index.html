@@ -9,7 +9,50 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
+
+    <!-- Navigation -->
+     <div class="nav-wrapper">
+        <nav class="nav">
+            <h1 class="nav-title">Podcast Player</h1>
+            <i class="fas fa-microphone-alt"></i>
+        </nav>
+     </div>
+
+     <div class="page-wrapper">
+        <!-- Search Container -->
+         <div class="search-container">
+            <!-- Search History -->
+             <div class="custom-select">
+                <select name="SearchHistory" id="searchHistory" title="Search History">
+                    <option value="">Select a Previous Search</option>
+                </select>
+             </div>
+             <!-- Search Input -->
+            <input type="text" id="searchInput" placeholder="Search by Podcast / Topic">
+            <!-- Search Buttons -->
+             <div class="search-buttons">
+                <button type="button" id="searchButton">Search</button>
+                <button type="button" id="resetButton">Clear History</button>
+             </div>
+         </div>
+
+         <!-- Main Container -->
+          <div class="main-container">
+
+          </div>
+
+          <!-- Player Container  -->
+           <div class="player-container">
+            <div class="player">
+
+            </div>
+
+            <div class="queue">
+                
+            </div>
+           </div>
+
+     </div>
     <!-- Script -->
     <script src="./script.js"></script>
 </body>
