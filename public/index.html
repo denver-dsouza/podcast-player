@@ -42,11 +42,87 @@
              <div class="loader-container">
                 <i class="fas fa-microphone-alt fa-pulse"></i>
              </div>
+             <!-- Cards Container -->
+              <div class="cards-container">
+               <div class="card">
+                  <img src="./podcast.png" alt="Podcast Image">
+                  <div class="card-content">
+                     <h3>Podcast Title</h3>
+                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere.</p>
+                     <p class="episode-count">Episodes: 50</p>
+                     <p class="pub-date">Newest Episode: 2024-09-01</p>
+                  </div>
+               </div>
+               <div class="card">
+                  <img src="./podcast.png" alt="Podcast Image">
+                  <div class="card-content">
+                     <h3>Podcast Title</h3>
+                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere.</p>
+                     <p class="episode-count">Episodes: 50</p>
+                     <p class="pub-date">Newest Episode: 2024-09-01</p>
+                  </div>
+               </div>
+               <div class="card">
+                  <img src="./podcast.png" alt="Podcast Image">
+                  <div class="card-content">
+                     <h3>Podcast Title</h3>
+                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere.</p>
+                     <p class="episode-count">Episodes: 50</p>
+                     <p class="pub-date">Newest Episode: 2024-09-01</p>
+                  </div>
+               </div>
+               <div class="card">
+                  <img src="./podcast.png" alt="Podcast Image">
+                  <div class="card-content">
+                     <h3>Podcast Title</h3>
+                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere.</p>
+                     <p class="episode-count">Episodes: 50</p>
+                     <p class="pub-date">Newest Episode: 2024-09-01</p>
+                  </div>
+               </div>
+               <div class="card">
+                  <img src="./podcast.png" alt="Podcast Image">
+                  <div class="card-content">
+                     <h3>Podcast Title</h3>
+                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consectetur beatae necessitatibus consequatur error quidem harum, et libero quis. Eaque unde recusandae neque dolorem nam numquam reprehenderit sit dolor dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, hic mollitia, adipisci deserunt impedit quae laudantium sint vel fuga corporis eos ea cum reprehenderit corrupti quos illo odit ad sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illo in atque, exercitationem et hic vero quos? Atque vitae similique natus inventore non. Alias excepturi enim repellendus cum fuga sint.</p>
+                     <p class="episode-count">Episodes: 50</p>
+                     <p class="pub-date">Newest Episode: 2024-09-01</p>
+                  </div>
+               </div>
+              </div>
           </div>
 
           <!-- Player Container  -->
            <div class="player-container">
             <div class="player">
+               <!-- Image -->
+               <div class="img-container">
+                  <img id="image" src="./podcast.png" alt="Podcast Image">
+               </div>
+               <!-- Title Container -->
+               <div class="title-container">
+                  <h2 id="title">Podcast Title</h2>
+                  <h3 id="datePublished">Date Published</h3>
+               </div>
+
+               <!-- Audio Elements -->
+               <audio id = "player" src=""></audio>
+               <!-- Progress -->
+                <div class="controls-container">
+                  <div class="progress-container" id="progress-container">
+                     <div class="progress" id="progress"></div>
+                        <div class="duration-wrapper">
+                           <span id="current-time">0:00</span>
+                           <span id="duration">0:00</span>
+                        </div>
+                  </div>
+                  <!-- Controls -->
+                  <div class="player-controls">
+                        <i class="fas fa-backward" id="prev" title="-15 Seconds"></i>
+                        <i class="fas fa-play main-button" id="play" title="Play"></i>
+                        <i class="fas fa-forward" id="next" title="+15 Seconds"></i>
+                  </div>
+                </div>
 
             </div>
 
@@ -60,3 +136,4 @@
     <script src="./script.js"></script>
 </body>
 </html>
+<!-- <a href="https://www.flaticon.com/free-icons/podcast" title="podcast icons">Podcast icons created by Flat-icons-com - Flaticon</a> -->
