@@ -201,9 +201,13 @@ button:hover {
     display: flex;
 }
 
+.pointer {
+    cursor: pointer;
+}
 
 .card img {
     width: 250px;
+    min-width: 250px;
     height: auto;
 }
 
@@ -232,7 +236,32 @@ button:hover {
 .card .pub-date {
     font-size: 0.8em;;
     color: #777;
-    margin-top: 5px;
+    margin: 5px;
+}
+
+.card .pub-date-alt {
+    font-size: 0.8em;;
+    color: #777;
+    margin: 8px 0 7px 15px;
+}
+
+/* Icons */
+.icon-container {
+    display: flex;
+}
+
+.icon-container i {
+    font-size: 30px;
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+}
+
+.icon-container i:hover {
+    filter: brightness(60%);
+}
+
+.mr-10 {
+    margin-right: 10px;
 }
 
 /* Player Container ------------------------ */
@@ -308,7 +337,19 @@ button:hover {
     width: 0%;
     transition: width 0.1s linear;
 }
-  
+
+@keyframes loadingAnimation {
+    0%, 100% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+}
+
+.loading {
+    animation: loadingAnimation 2s infinite ease-in-out;
+}
 .duration-wrapper {
     position: relative;
     top: -25px;
@@ -365,6 +406,10 @@ button:hover {
     border-radius: 12px;
 }
 
+.queue-item:last-child {
+    margin-bottom: 0;
+}
+
 .queue-item img{
     height: 100px;
     width: 100px;
@@ -390,20 +435,13 @@ button:hover {
     margin-bottom: 10px;
 }
 
-.icon-container {
-    display: flex;
+.queue-content .icon-container {
     flex-direction: column;
     justify-content: space-around;
 }
 
-.icon-container i {
+.queue-content .icon-container i {
     font-size: 25px;
-    color: rgb(95, 95, 95);
-    cursor: pointer;
-}
-
-.icon-container i:hover {
-    filter: brightness(60%);
 }
 
 /* Media Query: Smartphone / Tablet */
@@ -452,12 +490,14 @@ button:hover {
     /* Containers */
     .page-wrapper {
         flex-direction: column;
+        margin-top: 50px;
     }
 
     .search-container {
         position: relative;
         flex-direction: column;
         left: 5px;
+        top: 10px;
     }
 
     .custom-select {
@@ -481,7 +521,7 @@ button:hover {
     .main-container {
         width: calc(100% - 20px);
         height: calc(100% - 180px);
-        margin-top: 65px;
+        margin-top: 15px;
         padding: 5px 10px;
     }
 
@@ -509,7 +549,7 @@ button:hover {
     .player {
         height: 340px;
         width: calc(100% - 20px);
-        top: 60px;
+        top: 10px;
     }
 
     .title-container {
@@ -520,7 +560,7 @@ button:hover {
         margin-top: unset;
         width: calc(100% - 20px);
         position: relative;
-        top: 80px;
+        top: 30px;
         height: calc(100% - 440px);
     }
 

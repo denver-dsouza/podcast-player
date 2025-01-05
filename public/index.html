@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denver // Podcast Player</title>
     <link rel="icon" type="image/png" href="./favicon.png">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="./style.css">
+    <!-- Manifest -->
+     <link rel="manifest" href="./manifest.json">
 </head>
 <body>
 
@@ -44,55 +48,12 @@
          <!-- Main Container -->
           <div class="main-container">
             <!-- Loader -->
-             <div class="loader-container">
+             <div id="loader" class="loader-container">
                 <i class="fas fa-microphone-alt fa-pulse"></i>
              </div>
              <!-- Cards Container -->
-              <div class="cards-container">
-               <div class="card">
-                  <img src="./podcast.png" alt="Podcast Image">
-                  <div class="card-content">
-                     <h3>Podcast Title</h3>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere.</p>
-                     <p class="episode-count">Episodes: 50</p>
-                     <p class="pub-date">Newest Episode: 2024-09-01</p>
-                  </div>
-               </div>
-               <div class="card">
-                  <img src="./podcast.png" alt="Podcast Image">
-                  <div class="card-content">
-                     <h3>Podcast Title</h3>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere.</p>
-                     <p class="episode-count">Episodes: 50</p>
-                     <p class="pub-date">Newest Episode: 2024-09-01</p>
-                  </div>
-               </div>
-               <div class="card">
-                  <img src="./podcast.png" alt="Podcast Image">
-                  <div class="card-content">
-                     <h3>Podcast Title</h3>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere.</p>
-                     <p class="episode-count">Episodes: 50</p>
-                     <p class="pub-date">Newest Episode: 2024-09-01</p>
-                  </div>
-               </div>
-               <div class="card">
-                  <img src="./podcast.png" alt="Podcast Image">
-                  <div class="card-content">
-                     <h3>Podcast Title</h3>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere.</p>
-                     <p class="episode-count">Episodes: 50</p>
-                     <p class="pub-date">Newest Episode: 2024-09-01</p>
-                  </div>
-               </div>
-               <div class="card">
-                  <img src="./podcast.png" alt="Podcast Image">
-                  <div class="card-content">
-                     <h3>Podcast Title</h3>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab debitis esse aspernatur veniam libero quod ut at saepe ducimus fugiat, voluptatibus facere sapiente voluptas omnis voluptate incidunt totam soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt ratione, ex sunt totam quia mollitia ad vero commodi repellendus nulla hic quod, saepe quae a. Exercitationem maxime doloremque facere. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consectetur beatae necessitatibus consequatur error quidem harum, et libero quis. Eaque unde recusandae neque dolorem nam numquam reprehenderit sit dolor dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, hic mollitia, adipisci deserunt impedit quae laudantium sint vel fuga corporis eos ea cum reprehenderit corrupti quos illo odit ad sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illo in atque, exercitationem et hic vero quos? Atque vitae similique natus inventore non. Alias excepturi enim repellendus cum fuga sint.</p>
-                     <p class="episode-count">Episodes: 50</p>
-                     <p class="pub-date">Newest Episode: 2024-09-01</p>
-                  </div>
+              <div id="response" class="cards-container">
+              <!-- Dynamically created -->
                </div>
               </div>
           </div>
@@ -132,59 +93,9 @@
             </div>
             <!-- Queue -->
             <div class="queue">
-                <div class="queue-item">
-                     <img src="./podcast.png" alt="Episode Title">
-                     <div class="queue-content">
-                           <h3>******Episode Title is going here, of course!</h3>
-                           <div class="icon-container">
-                              <i class="fas fa-play-circle mb-10" title="Play Podcast"></i>
-                              <i class="fas fa-trash-alt" title="Remove from Queue"></i>
-                           </div>
-                     </div>
-                </div>
-                  <div class="queue-item">
-                  <img src="./podcast.png" alt="Episode Title">
-                  <div class="queue-content">
-                        <h3>******Episode Title is going here, of course!</h3>
-                        <div class="icon-container">
-                           <i class="fas fa-play-circle mb-10" title="Play Podcast"></i>
-                           <i class="fas fa-trash-alt" title="Remove from Queue"></i>
-                        </div>
-                  </div>
-             </div>
-                  <div class="queue-item">
-                     <img src="./podcast.png" alt="Episode Title">
-                     <div class="queue-content">
-                           <h3>******Episode Title is going here, of course!</h3>
-                           <div class="icon-container">
-                              <i class="fas fa-play-circle mb-10" title="Play Podcast"></i>
-                              <i class="fas fa-trash-alt" title="Remove from Queue"></i>
-                           </div>
-                     </div>
-          </div>
-                  <div class="queue-item">
-                     <img src="./podcast.png" alt="Episode Title">
-                     <div class="queue-content">
-                           <h3>******Episode Title is going here, of course!</h3>
-                           <div class="icon-container">
-                              <i class="fas fa-play-circle mb-10" title="Play Podcast"></i>
-                              <i class="fas fa-trash-alt" title="Remove from Queue"></i>
-                           </div>
-                     </div>
-               </div>
-                  <div class="queue-item">
-                     <img src="./podcast.png" alt="Episode Title">
-                     <div class="queue-content">
-                           <h3>******Episode Title is going here, of course!</h3>
-                           <div class="icon-container">
-                              <i class="fas fa-play-circle mb-10" title="Play Podcast"></i>
-                              <i class="fas fa-trash-alt" title="Remove from Queue"></i>
-                           </div>
-                     </div>
-               </div>
+               <!-- Dynamically Generated based on user inputs -->
             </div>
            </div>
-
      </div>
     <!-- Script -->
     <script src="./script.js"></script>
