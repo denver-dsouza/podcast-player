@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
       showLoader();
       
       try {
-          const response = await fetch(`/api/search?q=${encodeURIComponent(searchTerm)}`);
+          const response = await fetch(`https://api.podcastindex.org/api/1.0/search/byterm?q=${encodeURIComponent(query)}`);
           const data = await response.json();
       
           responseContainer.textContent = ''; // clear previous results
