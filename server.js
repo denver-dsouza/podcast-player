@@ -1,6 +1,4 @@
 const express = require('express');
-// const axios = require('axios');
-// const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
 const CryptoJS = require('crypto-js');
@@ -28,15 +26,14 @@ function generateAuthHeaders() {
         'X-Auth-Key': authKey,
         'X-Auth-Date': apiHeaderTime.toString(),
         'Authorization': hash
-    }
+    };
 }
 
 // Search for podcasts
-
 app.get('/api/search', async (req, res) => {
     const query = req.query.q;
     if (!query) {
-        return res.status(400).json({ error: 'Query Parameter is required!' });
+        return res.status(400).json({ error: 'Query parameter is required' });
     }
 
     const headers = generateAuthHeaders();
@@ -47,120 +44,50 @@ app.get('/api/search', async (req, res) => {
             headers: headers
         });
 
-        if (response.ok && response.headers.get('content-type').includes('application/JSON')) {
+        if (response.ok && response.headers.get('content-type').includes('application/json')) {
             const data = await response.json();
             res.json(data);
         } else {
             const rawText = await response.text();
-            console.log('Raw Response: ', rawText);
+            console.log('Raw response:', rawText);
             res.status(500).json({ error: 'Invalid response from API', rawText });
         }
-
-    } catch(error) {
-        console.error('Error fetching API: ', error.message);
+    } catch (error) {
+        console.error('Error fetching API:', error.message);
         res.status(500).json({ error: error.message });
     }
 });
 
-// Fetch episodes by itunesID
+// Fetch episodes by podcast ID
 app.get('/api/episodes', async (req, res) => {
     const feedId = req.query.feedId;
     const max = req.query.max;
     if (!feedId) {
-        return res.status(400).json({ error: 'Feed ID Parameter is required!' });
+        return res.status(400).json({ error: 'Feed ID parameter is required' });
     }
 
     const headers = generateAuthHeaders();
 
     try {
-        const response = await fetch(`${apiEndpoint}/episodes/byitunesid?id=${encodeURIComponent(feedId)}&max=${max}`,
-        {
+        const response = await fetch(`${apiEndpoint}/episodes/byitunesid?id=${encodeURIComponent(feedId)}&max=${max}`, {
             method: 'GET',
             headers: headers
         });
 
-        if (response.ok && response.headers.get('content-type').includes('application/JSON')) {
+        if (response.ok && response.headers.get('content-type').includes('application/json')) {
             const data = await response.json();
             res.json(data);
         } else {
             const rawText = await response.text();
-            console.log('Raw Response: ', rawText);
+            console.log('Raw response:', rawText);
             res.status(500).json({ error: 'Invalid response from API', rawText });
         }
-
-    } catch(error) {
-        console.error('Error fetching API: ', error.message);
+    } catch (error) {
+        console.error('Error fetching API:', error.message);
         res.status(500).json({ error: error.message });
     }
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT} pointing to ${apiEndpoint}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-
-// const PANTRY_ID = process.env.PANTRY_ID; 
-
-// Use your Pantry ID
-// const PANTRY_API_BASE_URL = `https://getpantry.cloud/apiv1/pantry/${PANTRY_ID}/basket`;
-
-// app.use(cors());
-// app.use(express.json());
-
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'index.html'));
-// });
-
-// app.get('/favicon.ico', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'favicon.ico'));
-// });
-
-// // Generic handler for GET request to fetch data from a specific basket
-// app.get('/:basketName', async (req, res) => {
-//     const { basketName } = req.params;
-//     try {
-//         const response = await axios.get(`${PANTRY_API_BASE_URL}/${basketName}`);
-//         res.json(response.data);
-//     } catch (error) {
-//         res.status(500).json({ error: error.message });
-//     }
-// });
-
-// // Generic handler for POST request to add new data to a specific basket
-// app.post('/:basketName', async (req, res) => {
-//     const { basketName } = req.params;
-//     const newData = req.body;
-//     try {
-//         const response = await axios.post(`${PANTRY_API_BASE_URL}/${basketName}`, newData);
-//         res.json(response.data);
-//     } catch (error) {
-//         res.status(500).json({ error: error.message });
-//     }
-// });
-
-// // Generic handler for PUT request to update data in a specific basket
-// app.put('/:basketName', async (req, res) => {
-//     const { basketName } = req.params;
-//     const updatedData = req.body;
-//     try {
-//         const response = await axios.put(`${PANTRY_API_BASE_URL}/${basketName}`, updatedData);
-//         res.json(response.data);
-//     } catch (error) {
-//         res.status(500).json({ error: error.message });
-//     }
-// });
-
-// // Generic handler for DELETE request to clear data from a specific basket
-// app.delete('/:basketName', async (req, res) => {
-//     const { basketName } = req.params;
-//     try {
-//         const response = await axios.delete(`${PANTRY_API_BASE_URL}/${basketName}`);
-//         res.json({ message: `Basket ${basketName} cleared successfully.` });
-//     } catch (error) {
-//         res.status(500).json({ error: error.message });
-//     }
-// });
-
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
