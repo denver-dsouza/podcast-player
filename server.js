@@ -39,7 +39,7 @@ app.get('/api/search', async (req, res) => {
     const headers = generateAuthHeaders();
 
     try {
-        const response = await fetch(`${apiEndpoint}search/byterm?q=${encodeURIComponent(query)}`, {
+        const response = await fetch(`https://api.podcastindex.org/api/1.0/search/byterm?q=${encodeURIComponent(query)}`, {
             method: 'GET',
             headers: headers
         });
